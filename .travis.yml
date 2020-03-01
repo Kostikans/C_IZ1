@@ -1,20 +1,27 @@
 dist:     trusty    # используем Ubuntu 14.04 Trusty Tahr (а не 12.02 Precise Pangolin)
 sudo:     required  # используем Virtual Machine (а не Docker container)
 
-language: cpp       # на практике разницы между специфичным для C++ окружением
+language: c       # на практике разницы между специфичным для C++ окружением
 # и, скажем, python -- никакой. Но пусть будет cpp.
 
 os:
   # будем прогонять CI и на Linux, и на Mac OS X...
   - linux
   - osx
-install:
-  - sudo apt-get install libgtest-dev
 
 compiler:
   # ... и с помощью GCC, и Clang
   - gcc
   - clang
+
+addons:
+  apt:
+    packages:
+    -valgrind
+    -cppcheck
+    -make
+    -cmake
+
 
 env:
   # список переменных окружения, влияющих на матрицу сборки:
@@ -35,21 +42,8 @@ matrix:
     - os:  osx
       env: TARGET_CPU=x86 BUILD_CONFIGURATION=Release
 
-    - os: linux
-      env:
-        - TEST="Valgrind"
-      addons:
-        apt:
-          sources:
-            - ubuntu-toolchain-r-test
-          packages:
-            - gcc-6
-            - g++-6
-            - valgrind
-      script:
-        - cmake -DCMAKE_CXX_COMPILER="g++-6" ..
-        - make
-        - ctest -T memcheck
+instal:
+  -source ci/travis/install-$TRAVIS_OS_NAME
 
 script:
   # скрипт сборки и тестирования проекта:
@@ -58,16 +52,3 @@ script:
   - cmake .. -DCMAKE_BUILD_TYPE=$BUILD_CONFIGURATION -DTARGET_CPU=$TARGET_CPU
   - cmake --build .
   - ctest --output-on-failure
-
-deploy:
-  # выкладываем tagged-коммиты на GitHub Releases:
-  provider:     releases
-  file:         <package-file>
-  skip_cleanup: true
-  overwrite:    true
-
-  api_key:
-    secure:   <encrypted-github-token>
-
-  on:
-    tags:     true
