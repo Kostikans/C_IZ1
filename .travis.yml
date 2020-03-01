@@ -8,6 +8,8 @@ os:
   # будем прогонять CI и на Linux, и на Mac OS X...
   - linux
   - osx
+install:
+  - sudo apt-get install libgtest-dev
 
 compiler:
   # ... и с помощью GCC, и Clang
