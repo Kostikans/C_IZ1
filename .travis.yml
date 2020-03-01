@@ -9,14 +9,6 @@ os:
   - linux
   - osx
 
-addons:
-  apt:
-    packages:
-    -valgrind
-    -cppcheck
-    -make
-    -cmake
-
 compiler:
   # ... и с помощью GCC, и Clang
   - gcc
