@@ -15,7 +15,7 @@ void print(char ** strings,int count) {
 }
 
 size_t getDateStringsReg(StringData *pStrings, StringData *pResStrings) {
-    size_t size = 4;
+    size_t size = 8;
     pResStrings->data = (char**)malloc(size * sizeof(char *));
     if(pResStrings->data == NULL)
         return NULL;
@@ -39,7 +39,7 @@ size_t getDateStringsReg(StringData *pStrings, StringData *pResStrings) {
                     return NULL;
             }
             int i = 0 ;
-            size_t lineSize= 4;
+            size_t lineSize= 128;
             if(pResStrings->data[resCount] == NULL)
                 pResStrings->data[resCount] = (char*)malloc(lineSize * sizeof(char));
             if(pResStrings->data[resCount] == NULL)
