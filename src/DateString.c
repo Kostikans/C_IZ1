@@ -98,7 +98,7 @@ size_t getStringsFromInput(StringData *pStrings)
 
 void FreeStrings(StringData *pStrings)
 {
-    if(pStrings->size == 0) 
+    if(pStrings->size == 0)
         return;
     for(size_t i = 0; i < pStrings->size; ++i){
         free(pStrings->data[i]);
