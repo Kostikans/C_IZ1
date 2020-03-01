@@ -47,6 +47,6 @@ script:
   # скрипт сборки и тестирования проекта:
   - mkdir build
   - cd build
-  - cmake .. -DCMAKE_BUILD_TYPE=$BUILD_CONFIGURATION -DTARGET_CPU=$TARGET_CPU
-  - cmake --build .
+  - cmake .. %CMAKE_CONFIGURE_FLAGS%
+  - cmake --build . %CMAKE_BUILD_FLAGS%
   - ctest --output-on-failure
