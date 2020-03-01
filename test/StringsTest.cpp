@@ -7,7 +7,7 @@ extern "C" {
 #include "DateString.h"
 }
 
-TEST(string,str1)
+TEST(string1,str1)
 {
     StringData str;
     StringData temp;
@@ -17,7 +17,7 @@ TEST(string,str1)
     ASSERT_EQ(getDateStringsReg(&str,&temp),0);
 }
 
-TEST(string,str2)
+TEST(string2,str2)
 {
     StringData str;
     StringData temp;
@@ -27,7 +27,7 @@ TEST(string,str2)
     ASSERT_EQ(getDateStringsReg(&str,&temp),1);
 }
 
-TEST(string,str3)
+TEST(string3,str3)
 {
     StringData str;
     StringData temp;
@@ -37,7 +37,7 @@ TEST(string,str3)
     ASSERT_EQ(getDateStringsReg(&str,&temp),0);
 }
 
-TEST(string,str4)
+TEST(string4,str4)
 {
     StringData str;
     StringData temp;
@@ -47,7 +47,7 @@ TEST(string,str4)
     ASSERT_EQ(getDateStringsReg(&str,&temp),1);
 }
 
-TEST(string,str5)
+TEST(string5,str5)
 {
     StringData str;
     StringData temp;
@@ -57,7 +57,7 @@ TEST(string,str5)
     ASSERT_EQ(getDateStringsReg(&str,&temp),1);
 }
 
-TEST(string,str6)
+TEST(string6,str6)
 {
     StringData str;
     StringData temp;
@@ -67,7 +67,7 @@ TEST(string,str6)
     ASSERT_EQ(getDateStringsReg(&str,&temp),1);
 }
 
-TEST(string,str7)
+TEST(string7,str7)
 {
     StringData str;
     StringData temp;
@@ -77,7 +77,7 @@ TEST(string,str7)
     ASSERT_EQ(getDateStringsReg(&str,&temp),0);
 }
 
-TEST(string,str8)
+TEST(string8,str8)
 {
     StringData str;
     StringData temp;
@@ -87,7 +87,7 @@ TEST(string,str8)
     ASSERT_EQ(getDateStringsReg(&str,&temp),0);
 }
 
-TEST(string,str9)
+TEST(string9,str9)
 {
     StringData str;
     StringData temp;
@@ -97,7 +97,7 @@ TEST(string,str9)
     ASSERT_EQ(getDateStringsReg(&str,&temp),0);
 }
 
-TEST(string,str10)
+TEST(string10,str10)
 {
     StringData str;
     StringData temp;
