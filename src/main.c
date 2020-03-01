@@ -24,5 +24,5 @@ int main() {
     FreeTestStrings(&str);
     FreeStrings(&pResStrings);
 
-    return 0; 
+    return 0;
 }
