@@ -20,6 +20,9 @@ env:
   - TARGET_CPU=amd64 BUILD_CONFIGURATION=Release
   - TARGET_CPU=x86 BUILD_CONFIGURATION=Debug
   - TARGET_CPU=x86 BUILD_CONFIGURATION=Release
+  global:
+    - RUN_TESTS=true
+
 
 matrix:
   exclude:
