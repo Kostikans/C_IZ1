@@ -44,10 +44,10 @@ matrix:
 
 
 script:
-  - valgrind ./C_IZ1
   # скрипт сборки и тестирования проекта:
   - mkdir build
   - cd build
   - cmake .. -DCMAKE_BUILD_TYPE=$BUILD_CONFIGURATION -DTARGET_CPU=$TARGET_CPU
   - cmake --build .
   - ctest --output-on-failure
+  - valgrind
