@@ -13,7 +13,7 @@ execute_process(COMMAND ${CMAKE_COMMAND} --build .
 add_subdirectory(${CMAKE_BINARY_DIR}/googletest-src
         ${CMAKE_BINARY_DIR}/googletest-build)
 
-enable_testing()
+include(CTest)
 add_subdirectory(test)
 
 include_directories("include")
