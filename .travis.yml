@@ -44,7 +44,7 @@ matrix:
 
 
 script:
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then valgrind ./C_IZ1 ; fi
+  - valgrind ./C_IZ1
   # скрипт сборки и тестирования проекта:
   - mkdir build
   - cd build
