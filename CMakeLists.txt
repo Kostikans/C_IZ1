@@ -16,7 +16,7 @@ add_subdirectory(${CMAKE_BINARY_DIR}/googletest-src
 include(CTest)
 add_subdirectory(test)
 
-include_directories("include")
+include_directories("${PROJECT_SOURCE_DIR}/include")
 
 file(GLOB sources
         "${PROJECT_SOURCE_DIR}/include/*.h"
