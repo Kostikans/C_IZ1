@@ -13,9 +13,6 @@ compiler:
   # ... и с помощью GCC, и Clang
   - gcc
   - clang
-  
-before_install:
-  - cat ./valgrindrc >> ~/.valgrindrc
 
 addons:
   apt:
