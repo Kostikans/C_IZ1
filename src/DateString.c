@@ -26,7 +26,6 @@ size_t getDateStringsReg(StringData *pStrings, StringData *pResStrings) {
     if(err == -1)
         return -1;
     while ( c < pStrings->size) {
-
         char *p = pStrings->data[c];
         regmatch_t  pm;
         int flag = regexec(&regex, p, 0, &pm, 0);
