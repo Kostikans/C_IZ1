@@ -29,7 +29,6 @@ env:
   - TARGET_CPU=amd64 BUILD_CONFIGURATION=Release
   - TARGET_CPU=x86 BUILD_CONFIGURATION=Debug
   - TARGET_CPU=x86 BUILD_CONFIGURATION=Release
-  - VALGRIND_OPTS='--leak-check=full --track-origins=yes'
 
 matrix:
   exclude:
@@ -45,6 +44,7 @@ matrix:
 
 
 script:
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then valgrind —leak-check=full —show-leak-kinds=all ./С_IZ1 ; fi
   # скрипт сборки и тестирования проекта:
   - mkdir build
   - cd build
