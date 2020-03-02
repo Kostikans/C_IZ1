@@ -122,7 +122,7 @@ TEST(string10,str10)
     str.size = 1;
     str.data = (char **) malloc(str.size * sizeof(char *));
     str.data[0] = "rewklrewkl";
-    ASSERT_EQ(getDateStringsReg(&str,&temp),1);
+    ASSERT_EQ(getDateStringsReg(&str,&temp),0);
     FreeTestStrings(&str);
     FreeStrings(&temp);
 }
