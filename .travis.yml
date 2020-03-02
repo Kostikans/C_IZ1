@@ -44,7 +44,7 @@ matrix:
 
 
 script:
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then valgrind —leak-check=full —show-leak-kinds=all ./С_IZ1 ; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then valgrind -leak-check=full -show-leak-kinds=all ./С_IZ1 ; fi
   # скрипт сборки и тестирования проекта:
   - mkdir build
   - cd build
