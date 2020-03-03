@@ -39,7 +39,7 @@ size_t getDateStringsReg(StringData *pStrings, StringData *pResStrings) {
             }
             int i = 0 ;
             size_t lineSize = 128;
-            pResStrings->data[resCount] = (char*)malloc(lineSize * sizeof(char));
+            pResStrings->data[resCount] = (char*)calloc(sizeof(char),lineSize);
             if(pResStrings->data[resCount] == NULL)
                 return NULL;
             while(p[i] != '\0'){
@@ -56,6 +56,7 @@ size_t getDateStringsReg(StringData *pStrings, StringData *pResStrings) {
         }
         ++c;
     }
+    regfree(&regex);
     pResStrings->size = resCount;
     print(pResStrings->data,pResStrings->size);
     return resCount;
