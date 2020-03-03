@@ -85,8 +85,8 @@ TEST(string7,str7)
     StringData temp;
     str.size = 1;
     str.data = (char **) malloc(str.size * sizeof(char *));
-    str.data[0] = "rewklrewkl";
-    ASSERT_EQ(getDateStringsReg(&str,&temp),0);
+    str.data[0] = "tre23:10:30";
+    ASSERT_EQ(getDateStringsReg(&str,&temp),1);
     FreeTestStrings(&str);
     FreeStrings(&temp);
 }
@@ -97,7 +97,7 @@ TEST(string8,str8)
     StringData temp;
     str.size = 1;
     str.data = (char **) malloc(str.size * sizeof(char *));
-    str.data[0] = "rewklrewkl";
+    str.data[0] = "25:23:12";
     ASSERT_EQ(getDateStringsReg(&str,&temp),0);
     FreeTestStrings(&str);
     FreeStrings(&temp);
@@ -109,7 +109,7 @@ TEST(string9,str9)
     StringData temp;
     str.size = 1;
     str.data = (char **) malloc(str.size * sizeof(char *));
-    str.data[0] = "rewklrewkl";
+    str.data[0] = "23:1:2";
     ASSERT_EQ(getDateStringsReg(&str,&temp),0);
     FreeTestStrings(&str);
     FreeStrings(&temp);
@@ -121,7 +121,7 @@ TEST(string10,str10)
     StringData temp;
     str.size = 1;
     str.data = (char **) malloc(str.size * sizeof(char *));
-    str.data[0] = "rewklrewkl";
+    str.data[0] = "23:70:70";
     ASSERT_EQ(getDateStringsReg(&str,&temp),0);
     FreeTestStrings(&str);
     FreeStrings(&temp);
