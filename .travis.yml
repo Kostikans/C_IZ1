@@ -51,4 +51,4 @@ script:
   - cmake --build .
   - ctest --output-on-failure
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then valgrind ./C_IZ1 ; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then cppcheck --enable=all --suppress=missingIncludeSystem . ; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then cppcheck --enable=all src/.c test/.c; fi
